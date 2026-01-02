@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { normalizeTime } from "../../utils/helperutility";
-import "./FeaturedRoutes.css";
+import "./featuredroutes.css";
 
 const FeaturedRoutes = ({ routes, loading }) => {
   const [filters, setFilters] = useState({
