@@ -13,7 +13,7 @@ import ProtectedAdminRoleBasedRoute from "./Components/ProtectedAdminRoleBasedRo
 import PublicRoute from "./Components/PublicRoute/PublicRoute";
 import CommuterContractPage from "./Pages/CommuterPages/CommuterContractPage/CommuterContractPage";
 import B2C_PartnerProfilePage from "./Pages/B2C_PartnerPages/B2C_PartnerProfilePage/B2C_PartnerProfilePage";
-import B2C_PartnerContractPage from "./Pages/B2C_PARTNERPages/B2C_ParnterContractPage/B2C_PartnerContractPage";
+import B2C_PartnerContractPage from "./Pages/B2C_PartnerPages/B2C_ParnterContractPage/B2C_PartnerContractPage";
 import B2B_PartnerProfilePage from "./Pages/B2B_PartnerPages/B2B_PartnerProfilePage/B2B_PartnerProfilePage";
 import B2B_PartnerContractPage from "./Pages/B2B_PartnerPages/B2B_ParnterContractPage/B2B_PartnerContractPage";
 import CorporateProfilePage from "./Pages/CorporatePages/CorporateProfilePage/CorporateProfilePage";
