@@ -1,0 +1,204 @@
+.ad-dash-service-providers {
+  width: 100%;
+}
+
+.ad-dash-sp-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.ad-dash-sp-search {
+  flex: 1;
+  max-width: 400px;
+}
+
+.ad-dash-sp-search-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.ad-dash-sp-search-input:focus {
+  border-color: #00a699;
+}
+
+.ad-dash-sp-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.ad-dash-sp-filter {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.ad-dash-sp-filter:hover {
+  background-color: #f9fafb;
+}
+
+.ad-dash-sp-filter-active {
+  background-color: #00a699;
+  color: white;
+  border-color: #00a699;
+}
+
+.ad-dash-sp-filter-green.ad-dash-sp-filter-active {
+  background-color: #10b981;
+  border-color: #10b981;
+}
+
+.ad-dash-sp-table-container {
+  overflow-x: auto;
+}
+
+.ad-dash-sp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ad-dash-sp-table thead {
+  background-color: #f9fafb;
+}
+
+.ad-dash-sp-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ad-dash-sp-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.ad-dash-sp-provider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ad-dash-sp-provider-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.ad-dash-sp-provider-id {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.ad-dash-sp-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #374151;
+}
+
+.ad-dash-sp-phone {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.ad-dash-sp-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.ad-dash-sp-star {
+  font-size: 16px;
+}
+
+.ad-dash-sp-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ad-dash-sp-status-active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.ad-dash-sp-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.ad-dash-sp-status-suspended {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.ad-dash-sp-action-btn {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.ad-dash-sp-suspend {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.ad-dash-sp-suspend:hover {
+  background-color: #fecaca;
+}
+
+@media (max-width: 1024px) {
+  .ad-dash-sp-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ad-dash-sp-search {
+    max-width: 100%;
+  }
+
+  .ad-dash-sp-filters {
+    justify-content: stretch;
+  }
+
+  .ad-dash-sp-filter {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .ad-dash-sp-table-container {
+    margin: 0 -16px;
+  }
+
+  .ad-dash-sp-table {
+    font-size: 12px;
+  }
+
+  .ad-dash-sp-table th,
+  .ad-dash-sp-table td {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,119 @@
+.ad-dash-b2b-listings {
+  width: 100%;
+  padding: 24px;
+}
+
+.ad-dash-b2b-listings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.ad-dash-b2b-listings-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.ad-dash-b2b-listings-description {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.ad-dash-b2b-listings-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+}
+
+.ad-dash-b2b-listings-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  stroke-width: 2;
+}
+
+.ad-dash-b2b-listings-search-input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ad-dash-b2b-listings-search-input:focus {
+  border-color: #0891b2;
+}
+
+.ad-dash-b2b-listings-sub-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ad-dash-b2b-listings-sub-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-dash-b2b-listings-sub-tab svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.ad-dash-b2b-listings-sub-tab:hover {
+  color: #334155;
+}
+
+.ad-dash-b2b-listings-sub-tab-active {
+  color: #0891b2;
+  border-bottom-color: #0891b2;
+}
+
+.ad-dash-b2b-listings-content {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .ad-dash-b2b-listings {
+    padding: 16px;
+  }
+
+  .ad-dash-b2b-listings-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ad-dash-b2b-listings-search-wrapper {
+    max-width: 100%;
+  }
+
+  .ad-dash-b2b-listings-sub-nav {
+    overflow-x: auto;
+  }
+}

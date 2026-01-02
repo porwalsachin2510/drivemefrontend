@@ -1,0 +1,108 @@
+.my-rides-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.section-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.sub-tabs {
+  display: flex;
+  gap: 15px;
+}
+
+.sub-tab {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sub-tab:hover {
+  color: #1a1a1a;
+}
+
+.sub-tab.active {
+  color: #1a1a1a;
+  font-weight: 600;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.rides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .section-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  .sub-tabs {
+    width: 100%;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .section-header {
+    gap: 12px;
+  }
+
+  .section-header h2 {
+    font-size: 20px;
+  }
+
+  .section-header p {
+    font-size: 12px;
+  }
+
+  .sub-tabs {
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .sub-tab {
+    font-size: 12px;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  .rides-list {
+    gap: 15px;
+  }
+}

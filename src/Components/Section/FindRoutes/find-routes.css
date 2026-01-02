@@ -1,0 +1,91 @@
+.find-routes-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+}
+
+.find-routes-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.routes-count {
+  font-size: 14px;
+  color: #00b074;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.empty-icon {
+  font-size: 60px;
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .find-routes-section {
+    padding: 30px;
+  }
+
+  .find-routes-section h2 {
+    font-size: 20px;
+  }
+
+  .empty-icon {
+    font-size: 50px;
+  }
+
+  .empty-title {
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .find-routes-section {
+    padding: 20px;
+  }
+
+  .find-routes-section h2 {
+    font-size: 18px;
+  }
+
+  .routes-count {
+    font-size: 12px;
+  }
+
+  .empty-icon {
+    font-size: 40px;
+  }
+
+  .empty-title {
+    font-size: 14px;
+  }
+
+  .empty-subtitle {
+    font-size: 12px;
+  }
+}

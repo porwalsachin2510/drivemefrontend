@@ -1,0 +1,68 @@
+"use client";
+
+import { useState } from "react";
+import Navbar from "../../../Components/Navbar/Navbar";
+import Footer from "../../../Components/Footer/Footer";
+import AdminHeader from "../../../Components/Admin/AdminHeader/AdminHeader";
+import AdminNavigation from "../../../Components/Admin/AdminNavigation/AdminNavigation";
+import AdminOverview from "../../../Components/Admin/AdminOverview/AdminOverview";
+import AdminB2CManagement from "../../../Components/Admin/AdminB2CManagement/AdminB2CManagement";
+import AdminRidePooling from "../../../Components/Admin/AdminRidePooling/AdminRidePooling";
+import AdminB2BListings from "../../../Components/Admin/AdminB2BListings/AdminB2BListings";
+import AdminUsers from "../../../Components/Admin/AdminUsers/AdminUsers";
+import AdminReports from "../../../Components/Admin/AdminReports/AdminReports";
+import AdminFinance from "../../../Components/Admin/AdminFinance/AdminFinance";
+import AdminComm from "../../../Components/Admin/AdminComm/AdminComm";
+import AdminAds from "../../../Components/Admin/AdminAds/AdminAds";
+import "./admindashboardpage.css";
+
+function AdminDashboardPage() {
+  const [activeTab, setActiveTab] = useState("corporate");
+  const [dashboardactiveTab, setDashboardActiveTab] = useState("overview");
+  console.log(dashboardactiveTab);
+
+const renderContent = () => {
+  switch (dashboardactiveTab) {
+    case "overview":
+      return <AdminOverview />;
+    case "b2c":
+      return <AdminB2CManagement />;
+    case "ride-pooling":
+      return <AdminRidePooling />;
+    case "b2b":
+      return <AdminB2BListings />;
+    case "users":
+      return <AdminUsers />;
+    case "reports":
+      return <AdminReports />;
+    case "finance":
+      return <AdminFinance />;
+    case "comm":
+      return <AdminComm />;
+    case "ads":
+      return <AdminAds />;
+    default:
+      return <AdminOverview />;
+  }
+    };
+    
+  return (
+    <div className="ad-dash-profile">
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      
+        <div className="ad-dash-dashboard">
+          <AdminHeader />
+          <AdminNavigation
+            dashboardactiveTab={dashboardactiveTab}
+            setDashboardActiveTab={setDashboardActiveTab}
+          />
+          <div className="ad-dash-content">{renderContent()}</div>
+        </div>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default AdminDashboardPage;

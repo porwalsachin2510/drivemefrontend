@@ -1,0 +1,54 @@
+.ad-dash-tag-modal {
+  max-width: 500px;
+}
+
+.ad-dash-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 12px;
+}
+
+.ad-dash-color-option {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 8px;
+}
+
+.ad-dash-color-option:hover {
+  transform: scale(1.05);
+  border-color: #d1d5db;
+}
+
+.ad-dash-color-selected {
+  border-color: #00a699 !important;
+  box-shadow: 0 0 0 3px rgba(0, 166, 153, 0.1);
+}
+
+.ad-dash-color-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.ad-dash-tag-preview {
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-dash-preview-tag {
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}

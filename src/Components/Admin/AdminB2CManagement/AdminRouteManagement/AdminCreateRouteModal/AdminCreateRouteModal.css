@@ -1,0 +1,240 @@
+.ad-dash-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.ad-dash-modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.ad-dash-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ad-dash-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.ad-dash-modal-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.ad-dash-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.ad-dash-modal-close:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.ad-dash-modal-body {
+  padding: 24px;
+}
+
+.ad-dash-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ad-dash-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ad-dash-form-group-full {
+  margin-bottom: 16px;
+}
+
+.ad-dash-form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.ad-dash-form-input {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ad-dash-form-input:focus {
+  border-color: #00a699;
+}
+
+.ad-dash-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.ad-dash-tag-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.ad-dash-tag-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.ad-dash-tag-label {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ad-dash-tag-green {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.ad-dash-tag-blue {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.ad-dash-tag-purple {
+  background-color: #e9d5ff;
+  color: #6b21a8;
+}
+
+.ad-dash-tag-yellow {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.ad-dash-tag-pink {
+  background-color: #fce7f3;
+  color: #9f1239;
+}
+
+.ad-dash-tag-red {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.ad-dash-form-toggles {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.ad-dash-toggle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.ad-dash-toggle-checkbox {
+  width: 48px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.ad-dash-toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.ad-dash-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.ad-dash-btn-secondary {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.ad-dash-btn-secondary:hover {
+  background-color: #f9fafb;
+}
+
+.ad-dash-btn-primary {
+  padding: 10px 20px;
+  background-color: #00a699;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.ad-dash-btn-primary:hover {
+  background-color: #008c80;
+}
+
+@media (max-width: 768px) {
+  .ad-dash-modal-content {
+    max-height: 95vh;
+  }
+
+  .ad-dash-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-dash-form-toggles {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

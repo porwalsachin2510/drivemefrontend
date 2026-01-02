@@ -1,0 +1,177 @@
+.ad-dash-route-management {
+  width: 100%;
+}
+
+.ad-dash-rm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.ad-dash-rm-search {
+  flex: 1;
+  max-width: 400px;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.ad-dash-rm-search:focus {
+  border-color: #00a699;
+}
+
+.ad-dash-rm-create-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #00a699;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.ad-dash-rm-create-btn:hover {
+  background-color: #008c80;
+}
+
+.ad-dash-rm-table-container {
+  overflow-x: auto;
+}
+
+.ad-dash-rm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ad-dash-rm-table thead {
+  background-color: #f9fafb;
+}
+
+.ad-dash-rm-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ad-dash-rm-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.ad-dash-rm-route-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ad-dash-rm-route-name {
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ad-dash-rm-featured {
+  font-size: 14px;
+}
+
+.ad-dash-rm-route-path {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.ad-dash-rm-provider {
+  font-size: 12px;
+  color: #00a699;
+}
+
+.ad-dash-rm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ad-dash-rm-tag {
+  padding: 4px 10px;
+  background-color: #f0fdf4;
+  color: #166534;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ad-dash-rm-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ad-dash-rm-price {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.ad-dash-rm-capacity {
+  font-weight: 600;
+  color: #374151;
+}
+
+.ad-dash-rm-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ad-dash-rm-status-active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.ad-dash-rm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.ad-dash-rm-action-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+
+.ad-dash-rm-action-icon:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .ad-dash-rm-header {
+    flex-direction: column;
+  }
+
+  .ad-dash-rm-search {
+    max-width: 100%;
+  }
+
+  .ad-dash-rm-create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,179 @@
+.ad-dash-user-suggested-routes {
+  padding: 24px;
+}
+
+.ad-dash-user-suggested-routes-header {
+  margin-bottom: 24px;
+}
+
+.ad-dash-user-suggested-routes-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ad-dash-user-suggested-routes-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.ad-dash-user-suggested-routes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ad-dash-user-suggested-routes-card {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.ad-dash-user-suggested-routes-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ad-dash-user-suggested-routes-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ad-dash-user-suggested-routes-route-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  color: #64748b;
+}
+
+.ad-dash-user-suggested-routes-route-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.ad-dash-user-suggested-routes-status {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ad-dash-user-suggested-routes-status-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.ad-dash-user-suggested-routes-status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.ad-dash-user-suggested-routes-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ad-dash-user-suggested-routes-info {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.ad-dash-user-suggested-routes-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.ad-dash-user-suggested-routes-info-item svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.ad-dash-user-suggested-routes-days {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ad-dash-user-suggested-routes-day {
+  padding: 4px 10px;
+  background: #e0f2fe;
+  color: #075985;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.ad-dash-user-suggested-routes-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ad-dash-user-suggested-routes-approve-btn,
+.ad-dash-user-suggested-routes-reject-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-dash-user-suggested-routes-approve-btn {
+  background: #10b981;
+  color: white;
+}
+
+.ad-dash-user-suggested-routes-approve-btn:hover {
+  background: #059669;
+}
+
+.ad-dash-user-suggested-routes-reject-btn {
+  background: white;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.ad-dash-user-suggested-routes-reject-btn:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+@media (max-width: 768px) {
+  .ad-dash-user-suggested-routes {
+    padding: 16px;
+  }
+
+  .ad-dash-user-suggested-routes-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ad-dash-user-suggested-routes-actions {
+    flex-direction: column;
+  }
+}
