@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { normalizeTime } from "../../utils/helperutility";
-import "./AvailableSection.css";
+import "./availablesection.css";
 
 const AvailableSection = ({
   routes,
