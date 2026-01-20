@@ -1,0 +1,562 @@
+/* Complete styling for Reports tab with responsive design */
+.admin-reports {
+  width: 100%;
+  padding: 24px;
+}
+
+.admin-reports-header {
+  margin-bottom: 24px;
+}
+
+.admin-reports-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.admin-reports-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.admin-reports-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.admin-reports-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.admin-reports-tab svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.admin-reports-tab:hover {
+  color: #374151;
+}
+
+.admin-reports-tab.active {
+  color: #10b981;
+  border-bottom-color: #10b981;
+}
+
+.admin-reports-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Fraud Detection Styles */
+.admin-reports-fraud {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-reports-fraud-card {
+  border-left: 4px solid;
+  background: #fef2f2;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.admin-reports-fraud-card.admin-reports-fraud-high {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.admin-reports-fraud-card.admin-reports-fraud-medium {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.admin-reports-fraud-card.admin-reports-fraud-low {
+  border-left-color: #10b981;
+  background: #f0fdf4;
+}
+
+.admin-reports-fraud-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.admin-reports-fraud-icon {
+  flex-shrink: 0;
+}
+
+.admin-reports-fraud-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.admin-reports-fraud-high .admin-reports-fraud-icon svg {
+  color: #dc2626;
+}
+
+.admin-reports-fraud-medium .admin-reports-fraud-icon svg {
+  color: #f59e0b;
+}
+
+.admin-reports-fraud-low .admin-reports-fraud-icon svg {
+  color: #10b981;
+}
+
+.admin-reports-fraud-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-reports-fraud-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.admin-reports-fraud-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+}
+
+.admin-reports-fraud-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.admin-reports-fraud-id,
+.admin-reports-fraud-user {
+  color: #6b7280;
+}
+
+.admin-reports-fraud-severity {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.admin-reports-fraud-severity-high {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.admin-reports-fraud-severity-medium {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.admin-reports-fraud-severity-low {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.admin-reports-fraud-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.admin-reports-fraud-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  white-space: nowrap;
+}
+
+.admin-reports-fraud-btn-ban {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.admin-reports-fraud-btn-ban:hover {
+  background: #b91c1c;
+}
+
+.admin-reports-fraud-btn-investigate {
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.admin-reports-fraud-btn-investigate:hover {
+  background: #f3f4f6;
+}
+
+/* User Activity Styles */
+.admin-reports-activity {
+  width: 100%;
+}
+
+.admin-reports-activity-header {
+  margin-bottom: 16px;
+}
+
+.admin-reports-activity-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.admin-reports-activity-table-container {
+  overflow-x: auto;
+}
+
+.admin-reports-activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.admin-reports-activity-table thead {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-reports-activity-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-reports-activity-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.admin-reports-activity-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-reports-activity-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-reports-activity-user-id {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.admin-reports-activity-risk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-reports-activity-risk-bar {
+  flex: 1;
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 120px;
+}
+
+.admin-reports-activity-risk-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.admin-reports-activity-risk-fill.high {
+  background: #dc2626;
+}
+
+.admin-reports-activity-risk-fill.medium {
+  background: #f59e0b;
+}
+
+.admin-reports-activity-risk-fill.low {
+  background: #10b981;
+}
+
+.admin-reports-activity-risk-value {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 32px;
+}
+
+.admin-reports-activity-risk-value.high {
+  color: #dc2626;
+}
+
+.admin-reports-activity-risk-value.medium {
+  color: #f59e0b;
+}
+
+.admin-reports-activity-risk-value.low {
+  color: #10b981;
+}
+
+.admin-reports-activity-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.admin-reports-activity-rating svg {
+  width: 14px;
+  height: 14px;
+  color: #f59e0b;
+}
+
+.admin-reports-activity-status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-reports-activity-status-flagged {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.admin-reports-activity-status-safe {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* Complaints Tab Styles */
+.admin-reports-complaints {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.admin-reports-complaint-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.admin-reports-complaint-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.admin-reports-complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-reports-complaint-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #fff7ed;
+  color: #c2410c;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-reports-complaint-time {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.admin-reports-complaint-description {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.admin-reports-complaint-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.admin-reports-complaint-against {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.admin-reports-complaint-resolve {
+  background: transparent;
+  color: #0ea5e9;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.admin-reports-complaint-resolve:hover {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+/* Placeholder Styles */
+.admin-reports-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.admin-reports-placeholder svg {
+  width: 64px;
+  height: 64px;
+  color: #d1d5db;
+  stroke-width: 2;
+  margin-bottom: 16px;
+}
+
+.admin-reports-placeholder h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.admin-reports-placeholder p {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .admin-reports-fraud-header {
+    flex-direction: column;
+  }
+
+  .admin-reports-fraud-actions {
+    width: 100%;
+  }
+
+  .admin-reports-fraud-btn {
+    flex: 1;
+  }
+
+  /* Responsive Design for Complaints */
+  .admin-reports-complaints {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-reports {
+    padding: 16px;
+  }
+
+  .admin-reports-content {
+    padding: 16px;
+  }
+
+  .admin-reports-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .admin-reports-tab {
+    white-space: nowrap;
+  }
+
+  .admin-reports-fraud-card {
+    padding: 16px;
+  }
+
+  .admin-reports-fraud-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .admin-reports-fraud-actions {
+    flex-direction: column;
+  }
+
+  .admin-reports-activity-table {
+    font-size: 12px;
+  }
+
+  .admin-reports-activity-table th,
+  .admin-reports-activity-table td {
+    padding: 10px;
+  }
+
+  .admin-reports-activity-risk-bar {
+    max-width: 80px;
+  }
+
+  /* Responsive Design for Complaints */
+  .admin-reports-complaint-card {
+    padding: 16px;
+  }
+
+  .admin-reports-complaint-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .admin-reports-complaint-resolve {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-reports-title {
+    font-size: 20px;
+  }
+
+  .admin-reports-fraud-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

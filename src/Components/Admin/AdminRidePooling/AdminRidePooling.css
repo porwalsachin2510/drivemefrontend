@@ -1,0 +1,90 @@
+.ad-dash-ride-pooling {
+  width: 100%;
+  padding: 24px;
+}
+
+.ad-dash-ride-pooling-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ad-dash-ride-pooling-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ad-dash-ride-pooling-refresh-btn {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-dash-ride-pooling-refresh-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.ad-dash-ride-pooling-sub-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ad-dash-ride-pooling-sub-tab {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-dash-ride-pooling-sub-tab:hover {
+  color: #334155;
+}
+
+.ad-dash-ride-pooling-sub-tab-active {
+  color: #0891b2;
+  border-bottom-color: #0891b2;
+}
+
+.ad-dash-ride-pooling-content {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .ad-dash-ride-pooling {
+    padding: 16px;
+  }
+
+  .ad-dash-ride-pooling-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .ad-dash-ride-pooling-refresh-btn {
+    width: 100%;
+  }
+
+  .ad-dash-ride-pooling-sub-nav {
+    overflow-x: auto;
+  }
+}

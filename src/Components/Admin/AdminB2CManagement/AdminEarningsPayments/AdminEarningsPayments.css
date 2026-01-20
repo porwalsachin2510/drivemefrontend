@@ -1,0 +1,251 @@
+.ad-dash-earnings-payments {
+  padding: 24px;
+}
+
+.ad-dash-earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 24px;
+}
+
+.ad-dash-earnings-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.ad-dash-earnings-card:hover {
+  border-color: #cbd5e1;
+}
+
+.ad-dash-earnings-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ad-dash-earnings-card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ad-dash-earnings-history-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.ad-dash-earnings-history-btn:hover {
+  color: #334155;
+}
+
+.ad-dash-earnings-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ad-dash-earnings-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.ad-dash-earnings-stat:nth-child(1) {
+  background: #d1fae5;
+}
+
+.ad-dash-earnings-stat:nth-child(2) {
+  background: #fef3c7;
+}
+
+.ad-dash-earnings-stat:nth-child(3) {
+  background: #dbeafe;
+}
+
+.ad-dash-earnings-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ad-dash-earnings-stat-released {
+  color: #065f46;
+}
+
+.ad-dash-earnings-stat-held {
+  color: #92400e;
+}
+
+.ad-dash-earnings-stat-balance {
+  color: #1e40af;
+}
+
+.ad-dash-earnings-stat-value {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ad-dash-earnings-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.ad-dash-earnings-release-btn,
+.ad-dash-earnings-hold-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-dash-earnings-release-btn {
+  background: #0891b2;
+  color: white;
+}
+
+.ad-dash-earnings-release-btn:hover {
+  background: #0e7490;
+}
+
+.ad-dash-earnings-hold-btn {
+  background: white;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.ad-dash-earnings-hold-btn:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.ad-dash-earnings-release-btn svg,
+.ad-dash-earnings-hold-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.ad-dash-earnings-history {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ad-dash-earnings-history-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.ad-dash-earnings-history-header svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.ad-dash-earnings-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ad-dash-earnings-history-table th {
+  text-align: left;
+  padding: 8px;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ad-dash-earnings-history-table td {
+  padding: 12px 8px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ad-dash-earnings-history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ad-dash-earnings-action-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ad-dash-earnings-amount {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ad-dash-earnings-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ad-dash-earnings-status-paid {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.ad-dash-earnings-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+@media (max-width: 1200px) {
+  .ad-dash-earnings-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ad-dash-earnings-payments {
+    padding: 16px;
+  }
+
+  .ad-dash-earnings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-dash-earnings-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-dash-earnings-history-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

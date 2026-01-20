@@ -1,0 +1,145 @@
+.ad-dash-tags-badges {
+  width: 100%;
+}
+
+.ad-dash-tb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.ad-dash-tb-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.ad-dash-tb-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.ad-dash-tb-create-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #00a699;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.ad-dash-tb-create-btn:hover {
+  background-color: #008c80;
+}
+
+.ad-dash-tb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.ad-dash-tb-tag-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.ad-dash-tb-tag-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.ad-dash-tb-tag-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-dash-tb-tag-icon {
+  font-size: 24px;
+}
+
+.ad-dash-tb-tag-label {
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ad-dash-tb-tag-actions {
+  display: flex;
+  gap: 8px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ad-dash-tb-action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.ad-dash-tb-edit {
+  background-color: #dbeafe;
+}
+
+.ad-dash-tb-edit:hover {
+  background-color: #bfdbfe;
+  transform: scale(1.1);
+}
+
+.ad-dash-tb-delete {
+  background-color: #fee2e2;
+}
+
+.ad-dash-tb-delete:hover {
+  background-color: #fecaca;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .ad-dash-tb-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ad-dash-tb-create-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ad-dash-tb-grid {
+    grid-template-columns: 1fr;
+  }
+}
