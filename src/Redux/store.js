@@ -10,6 +10,7 @@ import vehicleAssignmentReducer from "./slices/vehicleAssignmentSlice"
 import paymentScheduleReducer from "./slices/paymentScheduleSlice"
 import driverReducer from "./slices/driverSlice"
 import bookingReducer from "./slices/bookingSlice"
+import notificationReducer from "./slices/notificationSlice"
 
 export const store = configureStore({
     reducer: {
@@ -24,6 +25,7 @@ export const store = configureStore({
         paymentSchedule: paymentScheduleReducer,
         driver: driverReducer,
         booking: bookingReducer,
+        notifications: notificationReducer,
     },
 })
 

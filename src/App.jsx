@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+import { SocketProvider } from "./context/SocketContext";
 import HomePage from "./Pages/HomePage/index";
 import SearchFleet from "./Pages/SearchFleetPage/SearchFleet";
 import CommuterProfilePage from "./Pages/CommuterPages/CommuterProfilePage/CommuterProfilePage";
@@ -44,34 +45,35 @@ import CommuterMyBookingsPage from "./Pages/CommuterPages/CommuterMyBookingsPage
 function App() {
   return (
     <Provider store={store}>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <HomePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/search-fleet" element={<SearchFleet />} />
-        <Route
-          path="/commuter-profile"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
-              <CommuterProfilePage />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/commuter/mybookings"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
-              <CommuterMyBookingsPage />
-            </ProtectedRoleBasedRoute>
-          }
-        />
+      <SocketProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/search-fleet" element={<SearchFleet />} />
+          <Route
+            path="/commuter-profile"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
+                <CommuterProfilePage />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/commuter/mybookings"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
+                <CommuterMyBookingsPage />
+              </ProtectedRoleBasedRoute>
+            }
+          />
 
-        {/* <Route
+          {/* <Route
           path="/service-selection"
           element={
             <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
@@ -79,103 +81,103 @@ function App() {
             </ProtectedRoleBasedRoute>
           }
         /> */}
-        <Route
-          path="/corporate"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
-              <Corporate />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/search-results"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
-              <SearchResults />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/view-single-vehicle-owner"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
-              <SingleVehicleOwnerDetails />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/my-quotations"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <MyQuotations />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/quotation/:id"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <QuotationDetails />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/corporate/contracts"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <CorporateContractPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/corporate/contracts/:id"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <CorporateContractDetails />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/vehicle/:id"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
-              <VehicleDetails />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/fleet-portfolio/:id"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
-              <FleetOwnerPortfolio />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/commuter-profile/contract"
-          element={
-            <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
-              <CommuterContractPage />
-            </ProtectedRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/b2c-partner/bookings"
-          element={
-            <ProtectedRoute allowedRoles={["B2C_PARTNER"]}>
-              <B2C_PartnerBookingsPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/b2c-partner-profile/contract"
-          element={
-            <ProtectedRoute allowedRoles={["B2C_PARTNER"]}>
-              <B2C_PartnerContractPage />
-            </ProtectedRoute>
-          }
-        />
-        {/* <Route
+          <Route
+            path="/corporate"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
+                <Corporate />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/search-results"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
+                <SearchResults />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/view-single-vehicle-owner"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
+                <SingleVehicleOwnerDetails />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/my-quotations"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <MyQuotations />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/quotation/:id"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <QuotationDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/corporate/contracts"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <CorporateContractPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/corporate/contracts/:id"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <CorporateContractDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/vehicle/:id"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
+                <VehicleDetails />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/fleet-portfolio/:id"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["CORPORATE"]}>
+                <FleetOwnerPortfolio />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/commuter-profile/contract"
+            element={
+              <ProtectedRoleBasedRoute allowedRoles={["COMMUTER"]}>
+                <CommuterContractPage />
+              </ProtectedRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/b2c-partner/bookings"
+            element={
+              <ProtectedRoute allowedRoles={["B2C_PARTNER"]}>
+                <B2C_PartnerBookingsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/b2c-partner-profile/contract"
+            element={
+              <ProtectedRoute allowedRoles={["B2C_PARTNER"]}>
+                <B2C_PartnerContractPage />
+              </ProtectedRoute>
+            }
+          />
+          {/* <Route
           path="/b2b-partner-profile"
           element={
             <ProtectedRoute allowedRoles={["B2B_PARTNER"]}>
@@ -183,112 +185,113 @@ function App() {
             </ProtectedRoute>
           }
         /> */}
-        <Route
-          path="/b2b-partner/contracts"
-          element={
-            <ProtectedRoute allowedRoles={["B2B_PARTNER"]}>
-              <B2B_PartnerContractPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/b2b-partner/contracts/:id"
-          element={
-            <ProtectedRoute allowedRoles={["B2B_PARTNER"]}>
-              <B2B_PartnerContractDetails />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/corporate-profile"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <CorporateProfilePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/corporate/assigned-vehicles"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <CorporateAssignedVehiclesPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/corporate/bookings"
-          element={
-            <ProtectedRoute allowedRoles={["CORPORATE"]}>
-              <CorporateEmployeeBookingsPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <PublicRoute>
-              <Login />{" "}
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute>
-              <Register />{" "}
-            </PublicRoute>
-          }
-        />
-        <Route
-          path="/admin-login"
-          element={
-            <PublicAdminRoute>
-              <AdminLoginPage />{" "}
-            </PublicAdminRoute>
-          }
-        />
-        <Route
-          path="/admin-dashboard"
-          element={
-            <ProtectedAdminRoleBasedRoute allowedRoles={["ADMIN"]}>
-              <AdminDashboardPage />
-            </ProtectedAdminRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/admin-payment-verification"
-          element={
-            <ProtectedAdminRoleBasedRoute allowedRoles={["ADMIN"]}>
-              <PaymentVerification />
-            </ProtectedAdminRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/b2b-partner/vehicle-assignment"
-          element={
-            <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
-              <B2B_PartnerAssignmentUI />
-            </ProtectedAdminRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/b2b-partner/vehicle-assignmentlist"
-          element={
-            <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
-              <B2B_PartnerVehicleAssignmentList />
-            </ProtectedAdminRoleBasedRoute>
-          }
-        />
-        <Route
-          path="/b2b-partner/vehicle-assignmentform"
-          element={
-            <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
-              <B2B_PartnerVehicleAssignmentForm />
-            </ProtectedAdminRoleBasedRoute>
-          }
-        />
-        <Route path="/payment/callback" element={<PaymentCallback />} />
-      </Routes>
+          <Route
+            path="/b2b-partner/contracts"
+            element={
+              <ProtectedRoute allowedRoles={["B2B_PARTNER"]}>
+                <B2B_PartnerContractPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/b2b-partner/contracts/:id"
+            element={
+              <ProtectedRoute allowedRoles={["B2B_PARTNER"]}>
+                <B2B_PartnerContractDetails />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/corporate-profile"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <CorporateProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/corporate/assigned-vehicles"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <CorporateAssignedVehiclesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/corporate/bookings"
+            element={
+              <ProtectedRoute allowedRoles={["CORPORATE"]}>
+                <CorporateEmployeeBookingsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login />{" "}
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <Register />{" "}
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/admin-login"
+            element={
+              <PublicAdminRoute>
+                <AdminLoginPage />{" "}
+              </PublicAdminRoute>
+            }
+          />
+          <Route
+            path="/admin-dashboard"
+            element={
+              <ProtectedAdminRoleBasedRoute allowedRoles={["ADMIN"]}>
+                <AdminDashboardPage />
+              </ProtectedAdminRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/admin-payment-verification"
+            element={
+              <ProtectedAdminRoleBasedRoute allowedRoles={["ADMIN"]}>
+                <PaymentVerification />
+              </ProtectedAdminRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/b2b-partner/vehicle-assignment"
+            element={
+              <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
+                <B2B_PartnerAssignmentUI />
+              </ProtectedAdminRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/b2b-partner/vehicle-assignmentlist"
+            element={
+              <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
+                <B2B_PartnerVehicleAssignmentList />
+              </ProtectedAdminRoleBasedRoute>
+            }
+          />
+          <Route
+            path="/b2b-partner/vehicle-assignmentform"
+            element={
+              <ProtectedAdminRoleBasedRoute allowedRoles={["B2B_PARTNER"]}>
+                <B2B_PartnerVehicleAssignmentForm />
+              </ProtectedAdminRoleBasedRoute>
+            }
+          />
+          <Route path="/payment/callback" element={<PaymentCallback />} />
+        </Routes>
+      </SocketProvider>
     </Provider>
   );
 }

@@ -9,6 +9,7 @@ import Alerts from "../../../Components/Section/Alerts/Alerts";
 import Settings from "../../../Components/Section/Settings/Settings";
 import "./commuterprofilepage.css";
 import Footer from "../../../Components/Footer/Footer";
+import CommuterMyBookingsPage from "../CommuterMyBookingsPage/CommuterMyBookingsPage";
 
 export default function CommuterProfilePage() {
   const [profileactiveTab, setProfileActiveTab] = useState("my-rides");
@@ -17,7 +18,8 @@ export default function CommuterProfilePage() {
   const renderContent = () => {
     switch (profileactiveTab) {
       case "my-rides":
-        return <MyRides />;
+      // return <MyRides />;
+      return <CommuterMyBookingsPage />;
       case "find-routes":
         return <FindRoutes />;
       case "wallet":
@@ -27,7 +29,8 @@ export default function CommuterProfilePage() {
       case "settings":
         return <Settings />;
       default:
-        return <MyRides />;
+      // return <MyRides />;
+      return <CommuterMyBookingsPage />;
     }
   };
 

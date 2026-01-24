@@ -12,6 +12,7 @@ function AdminNavigation({ dashboardactiveTab, setDashboardActiveTab }) {
     { id: "finance", label: "Finance", icon: "💰" },
     { id: "comm", label: "Comm.", icon: "💬" },
     { id: "ads", label: "Ads", icon: "📢" },
+    { id: "Payment Verification", label: "Payment Verification", icon: "💰" },
   ];
 
   return (

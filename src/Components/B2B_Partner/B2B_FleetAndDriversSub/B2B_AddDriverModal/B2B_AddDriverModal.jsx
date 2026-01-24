@@ -190,7 +190,9 @@ function B2B_AddDriverModal({ onClose }) {
     try {
       // eslint-disable-next-line no-unused-vars
       const result = await dispatch(createDriver(formDataToSend)).unwrap();
-      setSuccessMessage("Driver registered successfully!");
+      setSuccessMessage(
+        "B2B Partner Driver registered successfully! Login credentials sent to driver's email.",
+      );
 
       setFormData({
         name: "",

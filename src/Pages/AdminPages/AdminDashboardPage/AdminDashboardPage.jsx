@@ -17,6 +17,7 @@ import AdminReports from "../../../Components/Admin/AdminReports/AdminReports";
 import AdminFinance from "../../../Components/Admin/AdminFinance/AdminFinance";
 import AdminComm from "../../../Components/Admin/AdminComm/AdminComm";
 import AdminAds from "../../../Components/Admin/AdminAds/AdminAds";
+import PaymentVerification from "../AdminPaymentVerification/PaymentVerification";
 import api from "../../../utils/api";
 import "./admindashboardpage.css";
 
@@ -49,6 +50,8 @@ const renderContent = () => {
       return <AdminComm />;
     case "ads":
       return <AdminAds />;
+    case "Payment Verification":
+      return <PaymentVerification />;
     default:
       return <AdminOverview />;
   }

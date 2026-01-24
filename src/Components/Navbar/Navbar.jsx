@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import UniversalNotifications from "../Common/Notifications/UniversalNotifications";
 import {
   selectIsAuthenticated,
   selectLoading,
@@ -11,10 +12,12 @@ import {
 
 export default function Navbar({ activeTab, setActiveTab }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
- 
+   const [showNotifications, setShowNotifications] = useState(false);
+
   const user = useSelector((state) => state.auth.user);
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const isLoading = useSelector(selectLoading);
+   const { unreadCount } = useSelector((state) => state.notifications);
 
   const navigate = useNavigate();
 
@@ -52,13 +55,12 @@ export default function Navbar({ activeTab, setActiveTab }) {
     }
   };
 
-  // const handleTabClick = (tab) => {
-  //   setActiveTab(tab);
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
 
-  //   localStorage.setItem("activeTab", tab);
-  //   setMobileMenuOpen(false);
-  //   navigate("/");
-  // };
+    localStorage.setItem("activeTab", tab);
+    setMobileMenuOpen(false);
+  };
 
   const handleContractTabClick = (tab) => {
 
@@ -132,22 +134,57 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <span className="building-icon">⌂</span> Corporate
             </button> */}
 
-            {isAuthenticated &&
-              (user?.role === "CORPORATE" || user?.role === "B2B_PARTNER") && (
+            {isAuthenticated && user?.role === "CORPORATE" && (
+              <>
                 <button
                   className={`navbar-tab ${
-                    activeTab === "contracts" ? "active" : ""
+                    activeTab === "my-quotations" ? "" : ""
+                  }`}
+                  onClick={() => {
+                    handleTabClick("my-quotations");
+                    navigate("/my-quotations");
+                  }}
+                >
+                  My Quotations
+                </button>
+
+                <button
+                  className={`navbar-tab ${
+                    activeTab === "contracts" ? "" : ""
                   }`}
                   onClick={() => handleContractTabClick("contracts")}
                 >
                   Contracts
                 </button>
-              )}
+              </>
+            )}
           </div>
 
           {isAuthenticated ? (
-            // After Login: Show user avatar with dropdown
-            <div className="nav-user">
+            // After Login: Show user avatar with dropdown and notifications
+            <div className="nav-user-section">
+              {/* Notifications Icon */}
+              <div className="nav-notifications">
+                <button
+                  className="notifications-icon"
+                  onClick={() => setShowNotifications(!showNotifications)}
+                  title="Notifications"
+                >
+                  🔔
+                  {unreadCount > 0 && (
+                    <span className="notification-badge">
+                      {unreadCount > 99 ? "99+" : unreadCount}
+                    </span>
+                  )}
+                </button>
+
+                <UniversalNotifications
+                  isOpen={showNotifications}
+                  onClose={() => setShowNotifications(false)}
+                />
+              </div>
+
+              {/* User Avatar */}
               <button
                 className="user-avatar"
                 onClick={handleMyProfile}

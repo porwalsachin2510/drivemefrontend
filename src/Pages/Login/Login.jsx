@@ -41,6 +41,8 @@ const Login = () => {
     CORPORATE: "/",
     B2C_PARTNER: "/",
     B2B_PARTNER: "/",
+    CORPORATE_DRIVER: "/",
+    B2B_PARTNER_DRIVER: "/",
   };
 
   const handleChange = (e) => {

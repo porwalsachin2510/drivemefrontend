@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import api from "../../../utils/api";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
@@ -20,7 +20,49 @@ const MyQuotations = () => {
   const [activeTab, setActiveTab] = useState("commuters");
 
   // Fetch quotations
-  const fetchQuotations = async () => {
+  // const fetchQuotations = async () => {
+  //   try {
+  //     setLoading(true);
+  //     setError(null);
+
+  //     // Build query string
+  //     const params = new URLSearchParams();
+  //     if (filters.status) params.append("status", filters.status);
+  //     params.append("page", filters.page);
+  //     params.append("limit", filters.limit);
+
+  //     const response = await api.post(
+  //       `/quotations/getcorporateownerquotations?${params}`,
+  //       {},
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //         withCredentials: true,
+  //       },
+  //     );
+
+  //     if (response.data.success) {
+  //       setQuotations(response.data.data.quotations || []);
+  //       setPagination(response.data.data.pagination);
+  //       setSummary(response.data.data.summary);
+  //     }
+  //   } catch (err) {
+  //     setError(err.response?.data?.message || "Failed to fetch quotations");
+  //     console.error("Error fetching quotations:", err);
+  //     setQuotations([]);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchQuotations();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [filters]);
+
+  // Fetch quotations
+  const fetchQuotations = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -39,7 +81,7 @@ const MyQuotations = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
           withCredentials: true,
-        }
+        },
       );
 
       if (response.data.success) {
@@ -54,12 +96,20 @@ const MyQuotations = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
   useEffect(() => {
     fetchQuotations();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters]);
+  }, [fetchQuotations]);
+
+  // Poll quotations every 1000ms
+  useEffect(() => {
+    const pollingInterval = setInterval(() => {
+      fetchQuotations();
+    }, 1000);
+
+    return () => clearInterval(pollingInterval);
+  }, [fetchQuotations]);
 
   // Handle filter change
   const handleFilterChange = (filterValue) => {
@@ -244,6 +294,6 @@ const MyQuotations = () => {
       <Footer />
     </>
   );
-};
+};;;
 
 export default MyQuotations;

@@ -545,10 +545,22 @@ const BookingModal = ({ route, isOpen, onClose, isCorporate, onSuccess }) => {
   const handleCorporateBooking = async () => {
     setIsProcessing(true);
 
+    // Validate driver is assigned for corporate booking
+    const driverId = route.driverId || route.assignedDriverId;
+    if (!driverId) {
+      console.error("No driver assigned to this corporate route");
+      setIsProcessing(false);
+      alert(
+        "This route has no assigned driver. Please contact your company administrator.",
+      );
+      return;
+    }
+
     const bookingData = {
       routeId: route.routeId || route.id,
       contractId: route.contractId || null,
       corporateOwnerId: user.companyId,
+      driverId: driverId,
       pickupLocation: route.fromLocation,
       dropoffLocation: route.toLocation,
       travelDate: new Date().toISOString(),
@@ -567,7 +579,7 @@ const BookingModal = ({ route, isOpen, onClose, isCorporate, onSuccess }) => {
       console.error("Corporate booking error:", err);
       setIsProcessing(false);
     }
-  };
+  };;
 
   const handleClose = () => {
     dispatch(clearBookingData());

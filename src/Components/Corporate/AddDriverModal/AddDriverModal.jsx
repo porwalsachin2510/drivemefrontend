@@ -192,7 +192,9 @@ function AddDriverModal({ onClose }) {
       const result = await dispatch(
         createCorporateDriver(formDataToSend),
       ).unwrap();
-      setSuccessMessage("Driver registered successfully!");
+      setSuccessMessage(
+        "Corporate Driver registered successfully! Login credentials sent to driver's email.",
+      );
 
       setFormData({
         name: "",

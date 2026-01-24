@@ -14,6 +14,7 @@ import B2B_Contracts from "../../../Components/B2B_Partner/B2B_Contracts/B2B_Con
 import B2B_Quotation from "../../../Components/B2B_Partner/B2B_Quotation/B2B_Quotation";
 import B2B_Analytics from "../../../Components/B2B_Partner/B2B_Analytics/B2B_Analytics";
 import B2B_Settings from "../../../Components/B2B_Partner/B2B_Settings/B2B_Settings";
+import B2B_PartnerContractPage from "../B2B_ParnterContractPage/B2B_PartnerContractPage";
 
 
 function B2B_PartnerProfilePage() {
@@ -28,8 +29,8 @@ function B2B_PartnerProfilePage() {
       case "fleet":
         return <B2B_FleetAndDrivers />;
       case "contracts":
-        return <B2B_Contracts />;
-
+        // return <B2B_Contracts />;
+        return <B2B_PartnerContractPage />;
       case "My Quotation":
         return <B2B_Quotation />;
 
@@ -58,7 +59,6 @@ function B2B_PartnerProfilePage() {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }

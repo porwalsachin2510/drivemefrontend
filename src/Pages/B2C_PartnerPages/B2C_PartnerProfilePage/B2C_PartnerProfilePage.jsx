@@ -3,6 +3,7 @@
 import { useState } from "react";
 import B2C_Partner_Header from "../../../Components/B2C_Partner/B2C_Partner_Header/B2C_Partner_Header";
 import B2C_Navigation from "../../../Components/B2C_Partner/B2C_Navigation/B2C_Navigation";
+import B2C_PartnerBookingsPage from "../B2C_PartnerBookingsPage/B2C_PartnerBookingsPage";
 import MyTrips from "../../../Components/B2C_Partner/Tabs/MyTrips/MyTrips";
 import Earnings from "../../../Components/B2C_Partner/Tabs/Earnings/Earnings";
 import Vehicles from "../../../Components/B2C_Partner/Tabs/Vehicles/Vehicles";
@@ -15,7 +16,8 @@ function B2C_PartnerProfilePage() {
   const renderContent = () => {
     switch (b2cactiveTab) {
       case "trips":
-        return <MyTrips />;
+      // return <MyTrips />;
+      return <B2C_PartnerBookingsPage/>;
       case "earnings":
         return <Earnings />;
       case "vehicles":
@@ -23,7 +25,8 @@ function B2C_PartnerProfilePage() {
       case "account":
         return <Account />;
       default:
-        return <MyTrips />;
+      // return <MyTrips />;
+        return <B2C_PartnerBookingsPage />;
     }
   };
 

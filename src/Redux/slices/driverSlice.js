@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import api from "../../utils/api"
 
+
 export const createDriver = createAsyncThunk("driver/createDriver", async (driverData, { rejectWithValue }) => {
     try {
         const response = await api.post("/b2b/drivers", driverData, {
