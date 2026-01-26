@@ -22,10 +22,17 @@ export const SocketProvider = ({ children }) => {
 
     if (user) {
       // Connect to Socket.io server
-      instance = io("http://localhost:5000", {
+      instance = io(import.meta.env.VITE_BACKEND_URL, {
         auth: {
           token: localStorage.getItem("token"),
         },
+
+        transports: ["polling", "websocket"],
+        withCredentials: true,
+        reconnection: true,
+        reconnectionAttempts: 5,
+        reconnectionDelay: 1000,
+        timeout: 20000,
       });
 
       instance.on("connect", () => {

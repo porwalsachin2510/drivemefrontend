@@ -7,7 +7,7 @@ import "./MyQuotations.css";
 
 const MyQuotations = () => {
   const [quotations, setQuotations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [error, setError] = useState(null);
   const [summary, setSummary] = useState(null);
   const [filter, setFilter] = useState("all");
@@ -62,50 +62,58 @@ const MyQuotations = () => {
   // }, [filters]);
 
   // Fetch quotations
-  const fetchQuotations = useCallback(async () => {
-    try {
-      setLoading(true);
-      setError(null);
+  const fetchQuotations = useCallback(
+    async (isSilent = false) => {
+      try {
+        if (!isSilent) {
+          setInitialLoading(true); // sirf first load
+        }
+        setError(null);
 
-      // Build query string
-      const params = new URLSearchParams();
-      if (filters.status) params.append("status", filters.status);
-      params.append("page", filters.page);
-      params.append("limit", filters.limit);
+        // Build query string
+        const params = new URLSearchParams();
+        if (filters.status) params.append("status", filters.status);
+        params.append("page", filters.page);
+        params.append("limit", filters.limit);
 
-      const response = await api.post(
-        `/quotations/getcorporateownerquotations?${params}`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        const response = await api.post(
+          `/quotations/getcorporateownerquotations?${params}`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+            withCredentials: true,
           },
-          withCredentials: true,
-        },
-      );
+        );
 
-      if (response.data.success) {
-        setQuotations(response.data.data.quotations || []);
-        setPagination(response.data.data.pagination);
-        setSummary(response.data.data.summary);
+        if (response.data.success) {
+          setQuotations(response.data.data.quotations || []);
+          setPagination(response.data.data.pagination);
+          setSummary(response.data.data.summary);
+        }
+      } catch (err) {
+        if (!isSilent) {
+          setError(err.response?.data?.message || "Failed to fetch quotations");
+        }
+        console.error("Error fetching quotations:", err);
+      } finally {
+        if (!isSilent) {
+          setInitialLoading(false);
+        }
       }
-    } catch (err) {
-      setError(err.response?.data?.message || "Failed to fetch quotations");
-      console.error("Error fetching quotations:", err);
-      setQuotations([]);
-    } finally {
-      setLoading(false);
-    }
-  }, [filters]);
+    },
+    [filters],
+  );
 
   useEffect(() => {
-    fetchQuotations();
+    fetchQuotations(false);
   }, [fetchQuotations]);
 
   // Poll quotations every 1000ms
   useEffect(() => {
     const pollingInterval = setInterval(() => {
-      fetchQuotations();
+      fetchQuotations(true);
     }, 1000);
 
     return () => clearInterval(pollingInterval);
@@ -154,17 +162,16 @@ const MyQuotations = () => {
     return countMap[status] || 0;
   };
 
-  if (loading && quotations.length === 0) {
-    return (
-      <div className="my-quotations-container">
-        <div className="quotations-loading">
-          <div className="loading-spinner"></div>
-          <div className="loading-text">Loading quotations...</div>
+    if (initialLoading && quotations.length === 0) {
+      return (
+        <div className="my-quotations-container">
+          <div className="quotations-loading">
+            <div className="loading-spinner"></div>
+            <div className="loading-text">Loading quotations...</div>
+          </div>
         </div>
-      </div>
-    );
-  }
-
+      );
+    }
   if (error) {
     return (
       <div className="my-quotations-container">
